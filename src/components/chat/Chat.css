@@ -56,7 +56,7 @@
 }
 .chat__receiver{
     margin-left: auto;
-    background-color: greenyellow;
+    background-color: #075E54;
 }
 .chat__footer{
     display: flex;
