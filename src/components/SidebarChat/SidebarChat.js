@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { Avatar } from '@material-ui/core'
+import { Avatar, Card } from '@material-ui/core'
 import './SidebarChat.css'
 import db from '../../firebase'
 import { Link } from 'react-router-dom';
@@ -37,24 +37,27 @@ function SidebarChat({id,name,addNewChat}) {
         }
     };
 
-    return !addNewChat ? (
+    return!addNewChat ? (
+        // <Card>
+            
+        // </Card>
         // changes the url of clicked room
         <Link to={`/rooms/${id}`}>
-            <div className='sidebarChat'>
+            <Card className='sidebarChat'>
           <Avatar src={`https://avatars.dicebear.com/api/avataaars/${seed}.svg`}/>
           <div className='sidebarChat__info'>
               <h2>{name}</h2>
               <p>{messages[0]?.message}</p>
           </div>
-        </div>
+        </Card>
         </Link>
        
     ) : (
-        <div 
+        <Card 
         onClick={createChat}
         className='sidebarChat'>
         <h3>Add New Chat</h3>
-        </div>
+        </Card>
     );
 }
 

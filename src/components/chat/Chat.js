@@ -1,4 +1,4 @@
-import { Avatar,IconButton} from '@material-ui/core'
+import { Avatar,Card,IconButton} from '@material-ui/core'
 import { AttachFile, InsertEmoticon, Mic, MoreVert, SearchOutlined } from '@material-ui/icons'
 import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router'
@@ -53,7 +53,8 @@ function Chat() {
         setInput('');
     }
     return (
-        <div className='chat'>
+        <Card className='chat'>
+ 
             <div className='chat__header'>
                 <Avatar  src={`https://avatars.dicebear.com/api/avataaars/${Math.floor(Math.random()*5000)}.svg`}/>
                 <div className='chat__headerInfo'>
@@ -103,7 +104,9 @@ function Chat() {
                 </form>
                 <Mic/>
             </div>
-        </div>
+        
+        </Card>
+       
     )
 }
 

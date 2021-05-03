@@ -1,4 +1,4 @@
-import { Button } from '@material-ui/core'
+import { Button, Card } from '@material-ui/core'
 import React from 'react'
 import { auth, provider } from '../../firebase'
 import { actionTypes } from '../../reducer'
@@ -21,8 +21,8 @@ function Login() {
     };
 
     return (
-        <div className='login'>
-            <div className='login__container'>
+        <Card className='login'>
+                <Card className='login__container'>
                 <img src={logo} alt='logo'/>
                 <div className='login__text'>
                     <h1>Sign in to WhatsApp</h1>
@@ -31,9 +31,8 @@ function Login() {
                 <Button onClick={signIn}>
                     Sign in With Google
                 </Button>
-            </div>
-            
-        </div>
+                </Card>    
+        </Card>
     )
 }
 

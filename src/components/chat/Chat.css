@@ -28,17 +28,17 @@
 .chat__body{
     flex:1;
     background-image: url('../Images/whatsapp\ dark\ theme.png');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
     padding:30px;
-    overflow-y: scroll;
-    background-size: cover;
+    overflow-y: auto;
+    background-size: contain;
 }
 .chat__message{
     position: relative;
     font-size: 16px;
     padding:10px;
-    background-color: white;
+    background-color: green;
     border-radius: 10px;
     width:fit-content;
     margin-bottom: 30px;

@@ -1,12 +1,12 @@
-import { Avatar, IconButton } from '@material-ui/core'
-import { DonutLarge,Chat, MoreVert, SearchOutlined } from '@material-ui/icons'
+import { Avatar, Card, IconButton } from '@material-ui/core'
+import { DonutLarge,Chat, MoreVert, SearchOutlined, Close } from '@material-ui/icons'
 import React, { useState,useEffect } from 'react'
 import db from '../../firebase'
 import { useStateValue } from '../../StateProvider'
 import SidebarChat from '../SidebarChat/SidebarChat'
 import './Sidebar.css'
 
-function Sidebar() {
+function Sidebar({ sidebarOpen, closeSidebar }) {
     const [rooms,setRooms] = useState([])
     const [{user}, dispatch] = useStateValue()
     useEffect(() => {
@@ -22,7 +22,7 @@ function Sidebar() {
     },[])
 // unsubsribe is used to discontinue the real time snapshot of the db
     return (
-        <div className='sidebar'>
+        <Card  className= 'sidebar'>
            <div className='sidebar__header'>
                 <Avatar src={user?.photoURL}/>
                 <div className='sidebar__headerRight'>
@@ -35,9 +35,13 @@ function Sidebar() {
                     <IconButton>
                          <MoreVert/>
                     </IconButton>
+                   
+                    
+         
+         
                 </div>
            </div>
-           <div className='sidebar__search'>
+           <Card className='sidebar__search'>
                <div className='sidebar__searchContainer'>
                     <SearchOutlined/>
                     <input 
@@ -45,7 +49,7 @@ function Sidebar() {
                         type='text'
                     />
                </div>
-            </div>
+            </Card>
            <div className='sidebar__chats'>
                <SidebarChat addNewChat/>
               {rooms.map((room) => (
@@ -55,7 +59,8 @@ function Sidebar() {
                   name={room.data.name} />
               ))}
            </div>
-        </div>
+        </Card>
+       
     )
 }
 
